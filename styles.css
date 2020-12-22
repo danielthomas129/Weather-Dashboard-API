@@ -33,10 +33,12 @@ header {
     text-align: center;
     font-size: xx-large;
     background-color: #395454;
+    background-image: url(https://media.giphy.com/media/kyU9vCxHNBqwg/giphy.gif);
+    background-size: cover;
 }
 
 h1, h3, p, li {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Crimson Pro', serif;
 }
 
 header h1 {
