@@ -29,7 +29,7 @@ if (JSON.parse(localStorage.getItem("searchHistory")) === null) {
     console.log("searchHistory loaded into searchHistoryArr");
     renderSearchHistory();
 }
-
+//search btn
 searchBtn.on("click", function(e) {
     e.preventDefault();
     if (searchInput.val() === "") {
@@ -66,7 +66,7 @@ function renderWeatherData(cityName, cityTemp, cityHumidity, cityWindSpeed, city
     uvIndexEl.text(`UV Index: ${uvVal}`);
     weatherIconEl.attr("src", cityWeatherIcon);
 }
-
+//get weather
 function getWeather(desiredCity) {
     let queryUrl = `https://api.openweathermap.org/data/2.5/weather?q=${desiredCity}&APPID=${apiKey}&units=imperial`;
     $.ajax({
@@ -122,6 +122,8 @@ function getWeather(desiredCity) {
     })
         
     });
+
+    //five day forecast
     getFiveDayForecast();
 
     function getFiveDayForecast() {

@@ -1,19 +1,18 @@
-# Weather-Dashboard-API# 06 Server-Side APIs: Weather Dashboard
+###**Weather-Dashboard-API**###
 
-Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
 
-Use the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for cities. The documentation includes a section called "How to start" that will provide basic setup and usage instructions. Use `localStorage` to store any persistent data.
+*This application was created to find a weather condition of a given city both the current and 5-Days forecast at the same time.
+The server-side API used to get response data object is retrieved from the Open Weather APi.
 
-## User Story
+###**This Application Includes**###
+* City, Date, Icon-image
+* Temperature
+* Humidity
+* Wind Speed
+* UV index
+* I used local storage here to retain the previous search city and display them to the user in the left side of the page under the list group. The user can also clear the search history by clicking the clear history button.
 
-```
-AS A traveler
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
-```
-
-## Acceptance Criteria
-
+###**Acceptance Criteria**###
 ```
 GIVEN a weather dashboard with form inputs
 WHEN I search for a city
@@ -30,17 +29,21 @@ WHEN I open the weather dashboard
 THEN I am presented with the last searched city forecast
 ```
 
-The following image demonstrates the application functionality:
+### **Code Samples** ###
 
-![weather dashboard demo](./Assets/06-server-side-apis-homework-demo.png)
+**variables**
+![alternativetext](assets/wd1.png)
+**Current_day**
+![alternativetext](assets/current-date.png)
+**5-Day Forecast**
+![alternativetext](assets/5day.png)
 
-## Review
 
-You are required to submit the following for review:
+### **Deployed Site Screenshot** ###
+![alternativetext](assets/gh.io-WeatherAPI_.png)
 
-* The URL of the deployed application.
 
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
 
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+
+[Click here to view published site] or (https://danielthomas129.github.io/Weather-Dashboard-API/)
+[Click here to view Github Repository] or (https://github.com/danielthomas129/Weather-Dashboard-API)
