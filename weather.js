@@ -85,3 +85,53 @@ searchHistoryEl.on('click', 'h1', function() {
 })
 
 loadLocalStorage();
+
+//////get 5 day forecast
+
+getFiveDayForecast();
+
+    function getFiveDayForecast() {
+
+        cardRow.empty();
+        let apiKey = "ac467b251ab4fbd40be9e5a1cfe02e06";
+        let searchUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityNameEl + "&appid=" + apiKey;
+        $.ajax({
+            url: searchUrl,
+            method: 'GET'
+        }).then(response => {
+            console.log(response);
+        })
+        .then(function(fiveDayReponse) {
+            for (let i = 0; i != fiveDayReponse.list.length; i+=8 ) {
+                let cityObj = {
+                    date: fiveDayReponse.list[i].dt_txt,
+                    icon: fiveDayReponse.list[i].weather[0].icon,
+                    temp: fiveDayReponse.list[i].main.temp,
+                    humidity: fiveDayReponse.list[i].main.humidity
+                }
+                let dateStr = cityObj.date;
+                let trimmedDate = dateStr.substring(0, 10); 
+                let weatherIco = `https:///openweathermap.org/img/w/${cityObj.icon}.png`;
+                createForecastCard(trimmedDate, weatherIco, cityObj.temp, cityObj.humidity);
+            }
+        })
+    }   
+
+
+function createForecastCard(date, icon, temp, humidity) {
+
+    // HTML elements we will create to later
+    let fiveDayCardEl = $("<div>").attr("class", "five-day-card");
+    let cardDate = $("<h3>").attr("class", "card-text");
+    let cardIcon = $("<img>").attr("class", "weatherIcon");
+    let cardTemp = $("<p>").attr("class", "card-text");
+    let cardHumidity = $("<p>").attr("class", "card-text");
+
+    cardRow.append(fiveDayCardEl);
+    cardDate.text(date);
+    cardIcon.attr("src", icon);
+    cardTemp.text(`Temp: ${temp} °F`);
+    cardHumidity.text(`Humidity: ${humidity}%`);
+    fiveDayCardEl.append(cardDate, cardIcon, cardTemp, cardHumidity);
+}
+
